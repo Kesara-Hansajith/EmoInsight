@@ -157,6 +157,9 @@ public class welcome extends javax.swing.JFrame {
             public void run() {
         Query q1 = new Query("consult", new Term[]{new Atom("expertsystem.pl")});
         System.out.println("Prolog consult " + (q1.hasSolution() ? "succeeded." : "failed."));
+        
+        Query q2 = new Query("consult", new Term[]{new Atom("expertsystem1.pl")});
+        System.out.println("Prolog consult " + (q2.hasSolution() ? "succeeded." : "failed."));
                 new welcome().setVisible(true);
             }
         });
