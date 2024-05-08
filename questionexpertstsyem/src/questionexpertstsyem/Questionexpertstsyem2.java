@@ -38,7 +38,7 @@ public class Questionexpertstsyem2 {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 // Load the background image
-                ImageIcon background = new ImageIcon("img-01.png");
+                ImageIcon background = new ImageIcon("img-02.png");
                 // Draw the image at the specified location
                 g.drawImage(background.getImage(), 0, 0, getWidth(), getHeight(), null);
             }
@@ -57,9 +57,8 @@ public class Questionexpertstsyem2 {
         if (currentSymptomIndex < allSymptoms1.length) {
             String symptom1 = allSymptoms1[currentSymptomIndex];
             String symptomDescription = querySymptomDescription1(symptom1);
-            JLabel descriptionLabel = new JLabel("<html><font face='Poppins Semibold' color='black' size='6' >Hello, "  + "! </font></html>");
+            JLabel descriptionLabel = new JLabel();
 
-            descriptionLabel.setForeground(Color.WHITE);
             JLabel symptomLabel = new JLabel("<html><font face='Poppins Medium' color='black' size='15'>" + symptom1 + "</font></html>");
 
             // Set text color and font style for "Do you have"
@@ -67,18 +66,18 @@ public class Questionexpertstsyem2 {
             Font labelFont = symptomLabel.getFont();
             //symptomLabel.setFont(new Font("Poppins Medium", Font.PLAIN, 22));
 
-            JLabel symptomDescriptionLabel = new JLabel("<html><font face='Poppins' color='gray' size='9'>" + symptomDescription + "</font></html>");
+            JLabel symptomDescriptionLabel = new JLabel("<html><font face='Poppins' color='#3a328e' size='9'>" + symptomDescription + "</font></html>");
             symptomDescriptionLabel.setForeground(Color.WHITE);
 
             JButton yesButton = new JButton("Yes");
-            yesButton.setBackground(new java.awt.Color(255, 255, 153));
+            yesButton.setBackground(new java.awt.Color(50, 58, 142));
             yesButton.setFont(new java.awt.Font("Poppins Light", 1, 18)); 
-            yesButton.setForeground(new java.awt.Color(255, 51, 102));
+            yesButton.setForeground(new java.awt.Color(255, 200, 200));
 
             JButton noButton = new JButton("No");
-            noButton.setBackground(new java.awt.Color(255, 255, 153));
+            noButton.setBackground(new java.awt.Color(50, 58, 142));
             noButton.setFont(new java.awt.Font("Poppins Light", 1, 18)); 
-            noButton.setForeground(new java.awt.Color(255, 51, 102));
+            noButton.setForeground(new java.awt.Color(255, 200, 200));
 
             yesButton.addActionListener(e -> {
                 patientSymptoms1.add(symptom1);
