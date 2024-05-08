@@ -74,7 +74,7 @@ public static void showNextSymptom(JPanel panel) {
         Font labelFont = symptomLabel.getFont();
         //symptomLabel.setFont(new Font("Poppins Medium", Font.PLAIN, 22));
 
-        JLabel symptomDescriptionLabel = new JLabel("<html><font face='Poppins' color='gray' size='9'>" + symptomDescription + "</font></html>");
+        JLabel symptomDescriptionLabel = new JLabel("<html><font face='Poppins' color='#be1e1e' size='9'>" + symptomDescription + "</font></html>");
         symptomDescriptionLabel.setForeground(Color.WHITE);
         
         
@@ -83,23 +83,18 @@ public static void showNextSymptom(JPanel panel) {
         JButton yesButton = new JButton();
         
         
-        yesButton.setBackground(new java.awt.Color(255, 255, 153));
+        yesButton.setBackground(new java.awt.Color(190, 30, 30));
         yesButton.setFont(new java.awt.Font("Poppins Light", 1, 18)); 
-        yesButton.setForeground(new java.awt.Color(255, 51, 102));
+        yesButton.setForeground(new java.awt.Color(255, 255, 153));
         yesButton.setText("Yes");
-        //yesButton.setBounds(460, 370, 170, 40);
 
 
-        JButton noButton = new JButton("No ");
-        
-        noButton.setBackground(new java.awt.Color(255, 255, 153));
+        JButton noButton = new JButton("No ");        
+        noButton.setBackground(new java.awt.Color(190, 30, 30));
         noButton.setFont(new java.awt.Font("Poppins Light", 1, 18)); 
-        noButton.setForeground(new java.awt.Color(255, 51, 102));
+        noButton.setForeground(new java.awt.Color(255, 255, 153));
         noButton.setText("No");
-       
-        //noButton.setBounds(460, 370, 170, 40);
-        
-        
+
         
 
         yesButton.addActionListener(e -> {
