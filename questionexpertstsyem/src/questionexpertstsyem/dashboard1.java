@@ -1,5 +1,7 @@
 package questionexpertstsyem;
+
 import questionexpertstsyem.Questionexpertstsyem;
+import questionexpertstsyem.Questionexpertstsyem2;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -60,32 +62,31 @@ public class dashboard1 extends JFrame {
         getContentPane().add(userNameLabel);
         userNameLabel.setBounds(140, 80, 300, 34);
 
-        button1 = new JButton();
+        button1 = new JButton(" ");
         //button1.setBackground(new Color(204, 204, 0));
         // Load the background image
-ImageIcon backgroundImage1 = new ImageIcon("im1-01.png");
+        ImageIcon backgroundImage1 = new ImageIcon("im1-01.png");
 
-// Set the background image to the button
-button1.setIcon(backgroundImage1);
+        // Set the background image to the button
+        button1.setIcon(backgroundImage1);
         button1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-                // Perform action for button1
-            }
+        // Perform action for button2
+        Questionexpertstsyem2.createAndShowGUI1();
+    }
         });
         getContentPane().add(button1);
         button1.setBounds(80, 160, 260, 260);
 
        button2 = new JButton("  ");
        button2.setBackground(Color.YELLOW);
+       // Load the background image
+       ImageIcon backgroundImage2 = new ImageIcon("ima-01.png");
+       // Set the background image to the button
+       button2.setIcon(backgroundImage2);
 
-// Load the background image
-ImageIcon backgroundImage2 = new ImageIcon("ima-01.png");
-
-// Set the background image to the button
-button2.setIcon(backgroundImage2);
-
-button2.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent evt) {
+      button2.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent evt) {
         // Perform action for button2
         Questionexpertstsyem.createAndShowGUI();
     }
@@ -114,14 +115,20 @@ button2.addActionListener(new ActionListener() {
     }
 
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Query q1 = new Query("consult", new Term[]{new Atom("expertsystem.pl")});
-        System.out.println("Prolog consult " + (q1.hasSolution() ? "succeeded." : "failed."));
-                new dashboard1().setVisible(true);
-            }
-        });
-    }
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            Query q1 = new Query("consult", new Term[]{new Atom("expertsystem.pl")});
+            System.out.println("Prolog1 consult " + (q1.hasSolution() ? "succeeded." : "failed."));
+            new dashboard1().setVisible(true);
+            
+            Query q2 = new Query("consult", new Term[]{new Atom("expertsystem1.pl")});
+            System.out.println("Prolog2 consult " + (q2.hasSolution() ? "succeeded." : "failed."));
+            new dashboard1().setVisible(true);
+            
+        }
+    });
+}
+
 
 
    
